@@ -52,7 +52,6 @@ This repository contains the reference diagram, configuration scripts, and step-
 ### **14. Monitoring and Notifications**
 - Configured **Amazon SNS** to send alerts for activities within the Auto Scaling Group.
 
----
 
 ## **Repository Contents**
 
@@ -60,7 +59,6 @@ This repository contains the reference diagram, configuration scripts, and step-
 2. **Configuration Scripts**: Includes scripts for deploying the infrastructure and the website.
 3. **Static Web Files**: HTML, CSS, and other assets for the static website.
 
----
 
 ## **How to Deploy**
 
