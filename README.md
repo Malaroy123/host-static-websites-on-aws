@@ -53,15 +53,6 @@ This repository contains the reference diagram, configuration scripts, and step-
 - Configured **Amazon SNS** to send alerts for activities within the Auto Scaling Group.
 
 
-## Key Features
-
-- **Scalability**: Auto Scaling ensures that the application can handle traffic spikes.
-- **High Availability**: ALB distributes traffic across multiple AZs.
-- **Security**: Resources are placed in private subnets, and communications are secured with SSL.
-- **Fault Tolerance**: Redundancy is achieved by using multiple AZs.
-- **Monitoring**: Alerts for critical activities ensure timely responses.
-
-
 ## **Repository Contents**
 
 1. **Reference Diagram**: Visual representation of the architecture.
@@ -108,3 +99,12 @@ systemctl enable httpd
 
 # Start the Apache HTTP Server to serve web content
 systemctl start httpd
+```
+
+## **Key Features**
+
+- **Scalability**: Auto Scaling ensures that the application can handle traffic spikes.
+- **High Availability**: ALB distributes traffic across multiple AZs.
+- **Security**: Resources are placed in private subnets, and communications are secured with SSL.
+- **Fault Tolerance**: Redundancy is achieved by using multiple AZs.
+- **Monitoring**: Alerts for critical activities ensure timely responses.
