@@ -52,6 +52,13 @@ This repository contains the reference diagram, configuration scripts, and step-
 ### **14. Monitoring and Notifications**
 - Configured **Amazon SNS** to send alerts for activities within the Auto Scaling Group.
 
+### Key Features
+- Scalability: Auto Scaling ensures that the application can handle traffic spikes.
+- High Availability: ALB distributes traffic across multiple AZs.
+- Security: Resources are placed in private subnets, and communications are secured with SSL.
+- Fault Tolerance: Redundancy is achieved by using multiple AZs.
+- Monitoring: Alerts for critical activities ensure timely responses.
+
 
 ## **Repository Contents**
 
@@ -65,28 +72,37 @@ This repository contains the reference diagram, configuration scripts, and step-
 ### **Prerequisites**
 - AWS account with appropriate permissions.
 - AWS CLI configured on your local machine.
-- Git installed for version control.
 
-### **Deployment Steps**
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/Malaroy123/host-static-websites-on-aws.git
-   cd host-static-websites-on-aws
+### **Deployment Script**
+```bash
+#!/bin/bash
 
-2. **Configure AWS CLI**:
-   ```bash
-   aws configure
+# Switch to the root user to gain full administrative privileges
+sudo su
 
-3. **Deploy the Infrastructure**:
-- Follow the provided scripts in the repository to set up the VPC, subnets and other resources.
+# Update all installed packages to their latest versions
+yum update -y
 
-4. **Deploy the Website**:
-- SSH into the EC2 instance in the private subnet
-- Use the provided deployment sript to set up the Apache HTTP server and host the website.
+# Install Apache HTTP Server
+yum install -y httpd
 
-### Key Features
-- Scalability: Auto Scaling ensures that the application can handle traffic spikes.
-- High Availability: ALB distributes traffic across multiple AZs.
-- Security: Resources are placed in private subnets, and communications are secured with SSL.
-- Fault Tolerance: Redundancy is achieved by using multiple AZs.
-- Monitoring: Alerts for critical activities ensure timely responses.
+# Change the current working directory to the Apache web root
+cd /var/www/html
+
+# Install Git
+yum install git -y
+
+# Clone the project GitHub repository to the current directory
+git clone https://github.com/your-username/host-static-websites-on-aws.git
+
+# Copy all files, including hidden ones, from the cloned repository to the Apache web root
+cp -R host-static-websites-on-aws/. /var/www/html/
+
+# Remove the cloned repository directory to clean up unnecessary files
+rm -rf host-static-websites-on-aws
+
+# Enable the Apache HTTP Server to start automatically at system boot
+systemctl enable httpd 
+
+# Start the Apache HTTP Server to serve web content
+systemctl start httpd
