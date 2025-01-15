@@ -52,12 +52,14 @@ This repository contains the reference diagram, configuration scripts, and step-
 ### **14. Monitoring and Notifications**
 - Configured **Amazon SNS** to send alerts for activities within the Auto Scaling Group.
 
-### Key Features
-- Scalability: Auto Scaling ensures that the application can handle traffic spikes.
-- High Availability: ALB distributes traffic across multiple AZs.
-- Security: Resources are placed in private subnets, and communications are secured with SSL.
-- Fault Tolerance: Redundancy is achieved by using multiple AZs.
-- Monitoring: Alerts for critical activities ensure timely responses.
+
+## Key Features
+
+- **Scalability**: Auto Scaling ensures that the application can handle traffic spikes.
+- **High Availability**: ALB distributes traffic across multiple AZs.
+- **Security**: Resources are placed in private subnets, and communications are secured with SSL.
+- **Fault Tolerance**: Redundancy is achieved by using multiple AZs.
+- **Monitoring**: Alerts for critical activities ensure timely responses.
 
 
 ## **Repository Contents**
