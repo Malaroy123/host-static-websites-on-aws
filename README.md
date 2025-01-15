@@ -1,3 +1,6 @@
+![Alt text](/architecure-diagram.jpg)
+
+
 # Static Website Hosting on AWS
 
 This repository contains the reference diagram, configuration scripts, and step-by-step instructions for hosting a static HTML web application on AWS. The project utilizes various AWS resources to ensure scalability, security, and high availability.
